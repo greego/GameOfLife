@@ -1,2 +1,1 @@
-tsc
-node ./out/index.js
+tsc && node ./out/index.js
