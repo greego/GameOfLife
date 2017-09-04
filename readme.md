@@ -1,11 +1,11 @@
-#To install:
+# To install:
 
 * npm install
 
-#To run:
+# To run:
 
 * npm start
 
-#To run mocha tests:
+# To run mocha tests:
 
 * npm test
