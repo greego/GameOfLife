@@ -1,3 +1,11 @@
-1. npm install
-2. tsc
-3. node ./out/index.js
+#To install:
+
+* npm install
+
+#To run:
+
+* npm start
+
+#To run mocha tests:
+
+* npm test
