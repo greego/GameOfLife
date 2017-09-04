@@ -2,17 +2,20 @@ import determineLiveNeighbours from './determineLiveNeighbours';
 import evaluateCell from './rules';
 
 export default function runPeriod(board:Array<Boolean[]>) :Array<Boolean[]> {
-    var numberOfRows : number = board.length;
-    var numberOfColumns : number = board[0].length;
-    var ret : Array<Boolean[]> = [[]];
-    for (var i=0;i<numberOfRows;i++)
+    var newBoard : Array<Boolean[]> = [];
+    var rowNumber = 0;
+    var columnNumber = 0;
+    for (var row of board)
     {
-        var inner:Boolean[] = [];
-        for (var j=0;j<numberOfColumns;j++)
+        var newRow:Boolean[] = [];
+        for (var cell of row)
         {
-            inner[j] = evaluateCell(board[i][j], determineLiveNeighbours(board, i, j));
+            newRow.push(evaluateCell(cell, determineLiveNeighbours(board, rowNumber, columnNumber)));
+            columnNumber++;
         }
-        ret[i] = inner;
+        newBoard.push(newRow);
+        rowNumber++;
+        columnNumber=0;
     }
-    return ret;
+    return newBoard;
 }
