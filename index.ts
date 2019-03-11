@@ -1,4 +1,4 @@
-import runPeriod from './src/boardState';
+import runPeriod from './src/runPeriod';
 
 var currentBoard:Array<Boolean>[];
 
